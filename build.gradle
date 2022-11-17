@@ -48,19 +48,19 @@ tasks.withType(Test) {
 }
 
 task one_property(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags "one_property_test"
     }
 }
 
 task many_properties(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags "many_properties_test"
     }
 }
 
 task hello(type: Test) {
-    useJUnitPlatform{
+    useJUnitPlatform {
         includeTags "hello"
     }
 }
