@@ -61,6 +61,6 @@ task many_properties(type: Test) {
 
 task hello(type: Test) {
     useJUnitPlatform{
-        includeTags "hello_test"
+        includeTags "hello"
     }
 }
