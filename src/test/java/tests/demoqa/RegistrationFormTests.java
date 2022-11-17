@@ -18,7 +18,6 @@ public class RegistrationFormTests extends TestBase {
             open("/automation-practice-form");
             executeJavaScript("$('footer').remove()");
             executeJavaScript("$('#fixedban').remove()");
-            Configuration.holdBrowserOpen = true;
         });
 
         step("Fill form", () -> {
