@@ -13,18 +13,23 @@ public class TestBase {
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
-        DesiredCapabilities capabilities = new DesiredCapabilities();
-//        capabilities.setCapability("browserName", "chrome");
-//        capabilities.setCapability("browserVersion", "100.0");
-        capabilities.setCapability("enableVNC", true);
-        capabilities.setCapability("enableVideo", true);
-
-        Configuration.browserCapabilities = capabilities;
+        // https://user1:1234@selenoid.autotests.cloud/wd/hub
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserPosition = "0x0";
-        Configuration.browserSize = "1280x800";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("browserVersion", "chrome");
+        Configuration.browserSize = System.getProperty("browserSize", "1280x800");
+
+        if (System.getProperty("remote") != null) {
+            DesiredCapabilities capabilities = new DesiredCapabilities();
+            capabilities.setCapability("enableVNC", true);
+            capabilities.setCapability("enableVideo", true);
+
+            Configuration.browserCapabilities = capabilities;
+            Configuration.remote = System.getProperty("remote");
+        }
     }
+
+
 
     @AfterEach
     void addAttachments() {
