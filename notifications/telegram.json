@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "QA GURU",
+    "environment": "some env",
+    "comment": "some comment",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5966890926:AAEPPXvbIwf144AaFKFfEs1Icqwg-2Qh9eE",
+    "chat": "-1001643421004",
+    "replyTo": ""
+  }
+}
